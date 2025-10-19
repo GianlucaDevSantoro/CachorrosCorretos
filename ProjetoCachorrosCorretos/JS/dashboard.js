@@ -95,7 +95,7 @@ function renderGridView() {
     const { catalog, listViewContainer } = uiElements;
     listViewContainer.classList.remove('list-view-active');
     listViewContainer.innerHTML = '';
-    catalog.className = 'catalog-grid'; // Reset classes
+    catalog.className = 'catalog-grid';
     catalog.classList.add(localStorage.getItem('dog-layout') || 'grid-4');
 
     if (!appState.currentBreeds || appState.currentBreeds.length === 0) {
@@ -323,3 +323,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchAllBreeds();
 });
+
