@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/botao.css">
+    <script src="../JS/dashboard.js" defer></script>
+    <script src="../JS/botao.js" defer></script>
+</head>
+<body>
+    <div id="dashboard-notification-container"></div>
+    <nav class="top-nav">
+        <span id="welcome-message"></span>
+        <div class="settings-container">
+            <button id="settings-toggle" aria-label="Abrir configurações"><i class="fas fa-cog"></i></button>
+            <div id="settings-menu" class="settings-menu hidden">
+                <div class="layout-options">
+                    <span>Visualização:</span>
+                    <button class="layout-btn" data-layout="list-view" title="Lista"><i class="fas fa-list"></i></button>
+                    <button class="layout-btn" data-layout="grid-3" title="3 Colunas"><i class="fas fa-th"></i></button>
+                    <button class="layout-btn" data-layout="grid-4" title="4 Colunas"><i class="fas fa-th-large"></i></button>
+                    <button class="layout-btn" data-layout="grid-5" title="5 Colunas"><i class="fas fa-grip-horizontal"></i></button>
+                </div>
+                <div class="theme-option">
+                    <span>Tema:</span>
+                    <button id="theme-toggle" aria-label="Alternar tema"><i class="fas fa-sun"></i></button>
+                </div>
+                <a href="index.html" id="logout-button" class="logout-button"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h1>Catálogo de Cachorros</h1>
+        <img src="../img/logoCachorros.png.png" alt="Logo" class="dashboard-logo">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar por raça...">
+        </div>
+        <div id="list-view-container" class="list-view-container hidden"></div>
+        <div id="dogCatalog" class="catalog-grid"></div>
+    </div>
+
+    <footer class="footer">
+        © 2025 Cachorros Corretos. Todos os direitos reservados.
+    </footer>
+
+    <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+    <div id="dog-modal" class="dog-modal hidden">
+        <button id="close-modal" class="close-modal-btn">&times;</button>
+        <div id="modal-content">
+        </div>
+    </div>
+</body>
+</html>

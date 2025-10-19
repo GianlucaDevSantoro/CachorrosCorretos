@@ -1,0 +1,10 @@
+#theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #222;
+}
+.dark-theme #theme-toggle {
+    color: #f3f4f6;
+}

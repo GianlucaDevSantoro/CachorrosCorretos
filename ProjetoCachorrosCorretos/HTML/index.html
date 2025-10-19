@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cachorros Corretos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/botao.css">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Alternar tema"><i class="fas fa-sun"></i></button>
+    <div id="notification-container"></div>
+    <div id="auth-container" class="auth-container">
+        <div class="auth-form-wrapper">
+            <form id="login-form" class="auth-form">
+                <div class="form-header">
+                    <img src="../img/logoCachorros.png.png" alt="Logo" class="form-logo">
+                    <h1>Login</h1>
+                </div>
+                <div class="form-group">
+                    <label for="login-username">Email</label>
+                    <input type="text" id="login-username" required placeholder="Digite seu email...">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" required placeholder="Digite sua senha...">
+                </div>
+                <button type="submit">Entrar</button>
+                <p class="form-switch">Não tem uma conta? <a href="#" id="show-register">Crie uma aqui</a></p>
+            </form>
+            <form id="register-form" class="auth-form hidden">
+                <div class="form-header">
+                    <img src="../img/logoCachorros.png.png" alt="Logo" class="form-logo">
+                    <h1>Seja bem-vindo</h1>
+                </div>
+                <div class="form-group">
+                    <label for="register-name">Nome</label>
+                    <input type="text" id="register-name" required placeholder="Digite seu nome...">
+                </div>
+                <div class="form-group">
+                    <label for="register-lastname">Sobrenome</label>
+                    <input type="text" id="register-lastname" required placeholder="Digite seu sobrenome...">
+                </div>
+                <div class="form-group">
+                    <label for="register-username">Email</label>
+                    <input type="text" id="register-username" required placeholder="Digite seu email...">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Senha</label>
+                    <input type="password" id="register-password" required placeholder="Digite sua senha...">
+                </div>
+                <button type="submit">Cadastrar</button>
+                <p class="form-switch">Já tem conta? <a href="#" id="show-login">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        © 2025 Cachorros Corretos. Todos os direitos reservados.
+    </footer>
+    <script src="../JS/script.js"></script>
+    <script src="../JS/botao.js"></script>
+</body>
+</html>

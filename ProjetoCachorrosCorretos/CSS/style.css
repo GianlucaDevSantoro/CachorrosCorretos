@@ -1,0 +1,190 @@
+@keyframes move-bg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -400px 400px;
+    }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f2f2f2;  
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ctext x='50' y='100' font-size='45' fill='%23000' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='200' y='180' font-size='30' fill='%23000' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='280' y='300' font-size='60' fill='%23000' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='80' y='360' font-size='38' fill='%23000' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='340' y='60' font-size='33' fill='%23000' opacity='0.08'%3E🐾%3C/text%3E%3C/svg%3E");
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: move-bg 20s linear infinite;
+}
+
+body > #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.dark-theme body::before {
+    background-color: #0f1724;
+}
+
+body.fade-in::before, body.fade-out::before {
+    opacity: 0;
+}
+.auth-container {
+  width: 400px;
+  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-form-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 22px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+.form-group {
+  margin-bottom: 14px;
+}
+.form-switch {
+    font-size: 14px;
+    margin-top: 16px;
+    text-align: center;
+}
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2b8aef;
+  color: #fff;
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(1px);
+}
+.dark-theme {
+  background-color: #0f1724;
+  color: #dfe7f5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ctext x='50' y='100' font-size='45' fill='%23FFF' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='200' y='180' font-size='30' fill='%23FFF' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='280' y='300' font-size='60' fill='%23FFF' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='80' y='360' font-size='38' fill='%23FFF' opacity='0.08'%3E🐾%3C/text%3E%3Ctext x='340' y='60' font-size='33' fill='%23FFF' opacity='0.08'%3E🐾%3C/text%3E%3C/svg%3E");
+}
+.dark-theme .auth-form-wrapper {
+  background: #111827;
+  box-shadow: none;
+}
+.dark-theme input {
+  background: #1f2937;
+  color: #e6eefb;
+  border: 1px solid #374151;
+}
+.dark-theme .auth-form {
+    background: #111827;
+}
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.3s forwards;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.auth-form h1 {
+    margin: 0;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+.dark-theme .footer {
+    color: #fff;
+}
